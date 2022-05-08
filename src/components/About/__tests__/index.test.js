@@ -11,7 +11,11 @@ afterEach(cleanup);
 // Can also use the "test" function
 describe('About component renders', () => {
   it('renders', () => {
-    render(<About />);
+    render(<About 
+      categories={categories}
+      setCurrentCategory={mockSetCurrentCategory}
+      currentCategory={mockCurrentCategory}
+      />);
   });
   
   it('matches snapshot DOM node structure', () => {

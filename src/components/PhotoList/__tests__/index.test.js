@@ -12,6 +12,11 @@ describe('PhotoList is rendering', () => {
   });
 
   it('renders', () => {
+    render(<Nav
+      categories={categories}
+      setCurrentCategory={mockSetCurrentCategory}
+      currentCategory={mockCurrentCategory}
+    />);
     const { asFragment } = render(<PhotoList />)
     expect(asFragment()).toMatchSnapshot()
   });

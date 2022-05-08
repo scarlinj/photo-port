@@ -24,6 +24,7 @@ function App() {
         currentCategory={currentCategory}
       ></Nav>
       <main>
+        {/* pass current category from the Gallery component in App.js */}
         <Gallery currentCategory={currentCategory}></Gallery>
         <About></About>
       </main>

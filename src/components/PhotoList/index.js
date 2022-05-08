@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+// import Modal from '../Modal';
+import photo from '../../assets/small/commercial/0.jpg'
 
 const PhotoList = ({ category }) => {
   const [photos] = useState([
@@ -118,12 +120,14 @@ const PhotoList = ({ category }) => {
     }
   ]);
 
-  const currentPhotos = photos.filter(photo => photo.category === category);
+  // below goes through each ohoto in photos array, matches to the category that user selected
+  const currentPhotos = photos.filter((photo) => photo.category === category);
 
   return (
     <div>
       <div className="flex-row">
         {currentPhotos.map((image, i) => (
+          // below src grabs small images in category (commercial, food, etc) i (iterates through numbers)
           <img
             src={require(`../../assets/small/${category}/${i}.jpg`).default}
             alt={image.name}
