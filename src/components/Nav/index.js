@@ -1,9 +1,10 @@
-import React from 'react';
+// import React from "react";
+import React , { useEffect } from "react";
+import { capitalizeFirstLetter } from "../../utils/helpers";
 
-
-function Nav() {
-  const categories = [
-    {
+function Nav(props) {
+  const {
+    categories = [{
       name: "commercial",
       description:
         "Photos of grocery stores, food trucks, and other commercial projects",
@@ -14,54 +15,70 @@ function Nav() {
       name: "landscape",
       description: "Fields, farmhouses, waterfalls, and the beauty of nature",
     },
-  ];
-  function categorySelected() {
-    console.log("hello");
-  }
-  return (
-<section className="my-5">
-<header id="Nav">
-  <h2>
-    <a href="/">
-      <span role="img" aria-label="camera"> 📸</span> Oh Snap!
-    </a>
-  </h2>
-  <nav>
-    <ul className="flex-row">
-      <li className="mx-2">
-        <a href="#about">
-          About me
-        </a>
-      </li>
-      <li>
-        <span>Contact</span>
-      </li>
-      {categories.map((category) => (
-        <li
-          className="mx-1"
-          // use "key" to uniquely identify properties or items in a database
-          // whenever mapping over anything in JSX, the outermost element must have a unique key attribute
-          // used category.name, since we expect each category to have unique name - oftentimes will use id
-          key={category.name}
-          // set up onClick() method below, will console log the category name
-          // onClieck expects a funciton declaration
-        >
-          {/* <span onClick={categorySelected(category.name)} > */}
-          {/* defined this function above as "categorySelected" - add (category.name) to console log the category name*/}
-          {/* onClick expects a callback function declaration - wrap in a function rather than just calling categorySelected(category.name) */}
-          <span onClick={categorySelected(category.name)} >
-            {category.name}
-          </span>
-        </li>
-      ))}
-    </ul>
-  </nav>
-</header>
-</section>
-  );
+  ],
+    setCurrentCategory,
+    currentCategory,
+  } = props;
+
+  useEffect(() => {
+    document.title = capitalizeFirstLetter(currentCategory.name);
+  }, [currentCategory]);
+//   const handleClick = (item) => {
+//     console.log(item);
+//     return item;
+//   };
+
+function categorySelected(name) {
+  console.log(`${name} clicked`)
 }
 
-// empty function below causing errors
-// function 
+  return (
+    <header className="flex-row px-1">
+      <h2>
+        <a data-testid="link" href="/">
+          <span role="img" aria-label="camera"> 📸</span> Oh Snap!
+        </a>
+      </h2>
+      <nav>
+        <ul className="flex-row">
+          <li className="mx-2">
+            <a data-testid="about" href="#about">
+              About me
+            </a>
+          </li>
+          <li className={"mx-2"}>
+            <span>
+              Contact
+            </span>
+          </li>
+          {/* use .map function to have more DRY code - define catergories in an array above the return statement, listing each catregory as an object */}
+          {/* When mapping over anything in JSX, outermost element must have key attribute set to be something unique. This helps React keep track of items in the virtual DOM */}
+          {categories.map((category) => (
+            <li
+              className={`mx-1 ${
+                currentCategory.name === category.name
+                }`}
+                // used category.name as a key to find unique categories, since categories will not share name
+                // Oftentimes, key will be an id
+              key={category.name}
+            >
+              {/* provide function when user clicks category */}
+              <span onClick={categorySelected} >
+                {category.name}
+              </span>
+              {/* <span
+                onClick={() => {
+                  setCurrentCategory(category);
+                }}
+              >
+                {capitalizeFirstLetter(category.name)}
+              </span> */}
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </header>
+  );
+}
 
 export default Nav;
