@@ -3,6 +3,7 @@ import React from 'react';
 import { render, cleanup } from '@testing-library/react';
 // import extend-expect from jest-dom
 import '@testing-library/jest-dom/extend-expect';
+// import component to test
 import About from '..';
 
 // call the cleanup function using the afterEach global function from Jest
