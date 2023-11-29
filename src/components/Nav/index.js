@@ -23,10 +23,10 @@ function Nav(props) {
   useEffect(() => {
     document.title = capitalizeFirstLetter(currentCategory.name);
   }, [currentCategory]);
-//   const handleClick = (item) => {
-//     console.log(item);
-//     return item;
-//   };
+  const handleClick = (item) => {
+    console.log(item);
+    return item;
+  };
 
 function categorySelected(name) {
   console.log(`${name} clicked`)
@@ -51,8 +51,13 @@ function categorySelected(name) {
               Contact
             </span>
           </li>
+          <li>
           {/* use .map function to have more DRY code - define catergories in an array above the return statement, listing each catregory as an object */}
           {/* When mapping over anything in JSX, outermost element must have key attribute set to be something unique. This helps React keep track of items in the virtual DOM */}
+            <span onClick={() => handleClick('Contact')}>
+              Contact
+            </span>
+          </li>
           {categories.map((category) => (
             <li
               className={`mx-1 ${

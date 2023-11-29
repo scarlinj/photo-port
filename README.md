@@ -1,10 +1,8 @@
-# Getting Started with Create React App
+# Technologies used
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-From the project directory "photo-port", you can run:
+Node.js
+React.js
+Jest
 
 ### `npm start`
 
