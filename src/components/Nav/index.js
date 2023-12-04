@@ -1,18 +1,37 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { capitalizeFirstLetter } from "../../utils/helpers";
 
+// function Nav() {
+// props cause components to re-render, so when passing this to App.js, navigation will re-render when clicking each category 
 function Nav(props) {
+  
   const {
     categories = [],
     setCurrentCategory,
     currentCategory,
   } = props;
 
+  useEffect(() => {
+    document.title = capitalizeFirstLetter(currentCategory.name);
+  }, [currentCategory]);
+  
+  // No longer use handleClick when using props
+  // const handleClick = (item) => {
+  //   console.log(item);
+  //   return item;
+  // };
+  
+  // const [categories] = useState([
+  //   {
+  //     name: 'commercial',
+  //     description: 'Photos of grocery stores, food trucks, and other commercial projects',
+  //   },
+  //   { name: 'portraits', description: 'Portraits of people in my life' },
+  //   { name: 'food', description: 'Delicious delicacies' },
+  //   { name: 'landscape', description: 'Fields, farmhouses, waterfalls, and the beauty of nature' },
+  // ]);
 
-  const handleClick = (item) => {
-    console.log(item);
-    return item;
-  };
+  // const [currentCategory, setCurrentCategory] = useState(categories[0]);
 
   return (
     <header className="flex-row px-1">
@@ -29,14 +48,16 @@ function Nav(props) {
             </a>
           </li>
           <li className={"mx-2"}>
-            <span onClick={() => handleClick('Contact')}>
+            {/* No longer use handleClick when using props */}
+            {/* <span onClick={() => handleClick('Contact')}> */}
+            <span>
               Contact
             </span>
           </li>
           {categories.map((category) => (
             <li
               className={`mx-1 ${
-                currentCategory.name === category.name
+                currentCategory.name === category.name && 'navActive'
                 }`}
               key={category.name}
             >

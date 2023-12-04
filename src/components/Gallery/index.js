@@ -1,6 +1,7 @@
 import React from 'react';
 import PhotoList from '../PhotoList';
-import photo from '../../assets/small/food/0.jpg';
+// hard-coding the photo shows correct photo in the home page
+import photo from '../../assets/small/commercial/0.jpg';
 import { capitalizeFirstLetter } from '../../utils/helpers';
 
 function Gallery(props) {
@@ -13,10 +14,13 @@ function Gallery(props) {
   return (
     <section>
       <h1 data-testid="h1tag">{capitalizeFirstLetter(currentCategory.name)}</h1>
+      <p>{currentCategory.name}</p>
       <p>{currentCategory.description}</p>
       <div>
         <img
           src={photo}
+          alt='Commercial Example'
+          className='img-thumbnail mx-1'
           />
       </div>
       {/* <PhotoList category={currentCategory.name} /> */}
