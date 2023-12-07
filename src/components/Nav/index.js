@@ -1,8 +1,15 @@
+<<<<<<< HEAD
 // import React from "react";
 import React , { useEffect } from "react";
+=======
+import React, {useState, useEffect} from "react";
+>>>>>>> feature/react-tests
 import { capitalizeFirstLetter } from "../../utils/helpers";
 
+// function Nav() {
+// props cause components to re-render, so when passing this to App.js, navigation will re-render when clicking each category 
 function Nav(props) {
+  
   const {
     categories = [{
       name: "commercial",
@@ -23,10 +30,31 @@ function Nav(props) {
   useEffect(() => {
     document.title = capitalizeFirstLetter(currentCategory.name);
   }, [currentCategory]);
+<<<<<<< HEAD
   const handleClick = (item) => {
     console.log(item);
     return item;
   };
+=======
+  
+  // No longer use handleClick when using props
+  // const handleClick = (item) => {
+  //   console.log(item);
+  //   return item;
+  // };
+  
+  // const [categories] = useState([
+  //   {
+  //     name: 'commercial',
+  //     description: 'Photos of grocery stores, food trucks, and other commercial projects',
+  //   },
+  //   { name: 'portraits', description: 'Portraits of people in my life' },
+  //   { name: 'food', description: 'Delicious delicacies' },
+  //   { name: 'landscape', description: 'Fields, farmhouses, waterfalls, and the beauty of nature' },
+  // ]);
+
+  // const [currentCategory, setCurrentCategory] = useState(categories[0]);
+>>>>>>> feature/react-tests
 
 function categorySelected(name) {
   console.log(`${name} clicked`)
@@ -47,6 +75,7 @@ function categorySelected(name) {
             </a>
           </li>
           <li className={"mx-2"}>
+<<<<<<< HEAD
             <span>
               Contact
             </span>
@@ -55,13 +84,18 @@ function categorySelected(name) {
           {/* use .map function to have more DRY code - define catergories in an array above the return statement, listing each catregory as an object */}
           {/* When mapping over anything in JSX, outermost element must have key attribute set to be something unique. This helps React keep track of items in the virtual DOM */}
             <span onClick={() => handleClick('Contact')}>
+=======
+            {/* No longer use handleClick when using props */}
+            {/* <span onClick={() => handleClick('Contact')}> */}
+            <a data-testid="contact" href="#contact">
+>>>>>>> feature/react-tests
               Contact
-            </span>
+            </a>
           </li>
           {categories.map((category) => (
             <li
               className={`mx-1 ${
-                currentCategory.name === category.name
+                currentCategory.name === category.name && 'navActive'
                 }`}
                 // used category.name as a key to find unique categories, since categories will not share name
                 // Oftentimes, key will be an id

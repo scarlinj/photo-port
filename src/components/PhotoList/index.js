@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-// import Modal from '../Modal';
-import photo from '../../assets/small/commercial/0.jpg'
+// import photo from '../../assets/small/commercial/0.jpg';
 
 const PhotoList = ({ category }) => {
-  const [photos] = useState([
+const [photos] = useState([
     {
       name: 'Grocery aisle',
       category: 'commercial',
@@ -117,7 +116,7 @@ const PhotoList = ({ category }) => {
       category: 'landscape',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie'
-    }
+    },
   ]);
 
   // below goes through each photo in photos array, matches to the category that user selected

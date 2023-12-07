@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Nav from './components/Nav';
 import About from './components/About';
 import Gallery from './components/Gallery';
+import Contact from './components/Contact';
 
 
 // below function returns JSX that represents HTML in JavaScript
@@ -26,9 +27,13 @@ function App() {
         currentCategory={currentCategory}
       ></Nav>
       <main>
-        {/* pass current category from the Gallery component in App.js */}
-        <Gallery currentCategory={currentCategory}></Gallery>
+        <Gallery 
+          categories={categories}
+          setCurrentCategory={setCurrentCategory}
+          currentCategory={currentCategory}
+        ></Gallery>
         <About></About>
+        <Contact></Contact>
       </main>
     </div>
   );
