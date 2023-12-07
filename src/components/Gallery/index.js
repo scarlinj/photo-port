@@ -20,7 +20,8 @@ function Gallery({ currentCategory }) {
       <p>{currentCategory.description}</p> */}
       <h1 data-testid="h1tag">{capitalizeFirstLetter(name)}</h1>
       <p>{description}</p>
-      <PhotoList />
+      {/* pass down the currentCategory.name as a prop into the Photolist component from Gallery */}
+      <PhotoList category={currentCategory.name} />
       {/* <div>
         <img
           src={photo}

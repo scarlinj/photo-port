@@ -9,10 +9,10 @@ function Contact() {
       {/* <img src={portrait} className="my-2" style={{ width: "100%" }} alt="cover" /> */}
       <div className="my-2">
         <p>
-          Contact me at JohnBopp@gmail.com
+          Contact me at JohnBopp@email.com
         </p>
         <p>
-          My Photography Portfolio: https://www.pixpa.com/example/preview/?ref=alvaro-43&url=https://www.andrevanrensburg.photo/
+          My Photography Portfolio: https://www.pixpa.com/example/preview/
         </p>
       </div>
     </section>

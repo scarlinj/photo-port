@@ -129,9 +129,12 @@ const [photos] = useState([
           // below src grabs small images in category (commercial, food, etc) i (iterates through numbers)
           // module added ".default" after .jpg, but that caused errors.  Removed the default at the end of path
           <img
-            src={require(`../../assets/small/${category}/${i}.jpg`)}
+            // toe render image, must invoke the "default" property
+            src={require(`../../assets/small/${category}/${i}.jpg`).default}
+            // alt is for accessibility user-assistance devices, such as screen readers
             alt={image.name}
             className="img-thumbnail mx-1"
+            // key must be a unique string
             key={image.name}
           />
         ))}
