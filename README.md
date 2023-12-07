@@ -1,8 +1,3 @@
-# Technologies used
-
-Node.js
-React.js
-Jest
 # About Oh, Snap!
 
 Click the links at the top to see pages about me, my photography portfolio and how to contact me.

@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-// import React from "react";
-import React , { useEffect } from "react";
-=======
 import React, {useState, useEffect} from "react";
->>>>>>> feature/react-tests
 import { capitalizeFirstLetter } from "../../utils/helpers";
 
 // function Nav() {
@@ -11,31 +6,17 @@ import { capitalizeFirstLetter } from "../../utils/helpers";
 function Nav(props) {
   
   const {
-    categories = [{
-      name: "commercial",
-      description:
-        "Photos of grocery stores, food trucks, and other commercial projects",
-    },
-    { name: "portraits", description: "Portraits of people in my life" },
-    { name: "food", description: "Delicious delicacies" },
-    {
-      name: "landscape",
-      description: "Fields, farmhouses, waterfalls, and the beauty of nature",
-    },
-  ],
+    categories = [],
     setCurrentCategory,
     currentCategory,
   } = props;
 
+  // In useEffect, the first argument is the callback function, and the second argument is an array with a single element, currentCategory.
+  // The second argument directs the hook to re-render the component on changes to the value of this state. In other words, if currentCategory changes now, 
+  // the component will re-render so that the change in document.title will be visible to the user.
   useEffect(() => {
     document.title = capitalizeFirstLetter(currentCategory.name);
   }, [currentCategory]);
-<<<<<<< HEAD
-  const handleClick = (item) => {
-    console.log(item);
-    return item;
-  };
-=======
   
   // No longer use handleClick when using props
   // const handleClick = (item) => {
@@ -54,11 +35,6 @@ function Nav(props) {
   // ]);
 
   // const [currentCategory, setCurrentCategory] = useState(categories[0]);
->>>>>>> feature/react-tests
-
-function categorySelected(name) {
-  console.log(`${name} clicked`)
-}
 
   return (
     <header className="flex-row px-1">
@@ -75,20 +51,9 @@ function categorySelected(name) {
             </a>
           </li>
           <li className={"mx-2"}>
-<<<<<<< HEAD
-            <span>
-              Contact
-            </span>
-          </li>
-          <li>
-          {/* use .map function to have more DRY code - define catergories in an array above the return statement, listing each catregory as an object */}
-          {/* When mapping over anything in JSX, outermost element must have key attribute set to be something unique. This helps React keep track of items in the virtual DOM */}
-            <span onClick={() => handleClick('Contact')}>
-=======
             {/* No longer use handleClick when using props */}
             {/* <span onClick={() => handleClick('Contact')}> */}
             <a data-testid="contact" href="#contact">
->>>>>>> feature/react-tests
               Contact
             </a>
           </li>
@@ -97,21 +62,15 @@ function categorySelected(name) {
               className={`mx-1 ${
                 currentCategory.name === category.name && 'navActive'
                 }`}
-                // used category.name as a key to find unique categories, since categories will not share name
-                // Oftentimes, key will be an id
               key={category.name}
             >
-              {/* provide function when user clicks category */}
-              <span onClick={categorySelected} >
-                {category.name}
-              </span>
-              {/* <span
+              <span
                 onClick={() => {
                   setCurrentCategory(category);
                 }}
               >
                 {capitalizeFirstLetter(category.name)}
-              </span> */}
+              </span>
             </li>
           ))}
         </ul>
