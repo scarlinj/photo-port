@@ -50,9 +50,9 @@ function Nav(props) {
           <li className={"mx-2"}>
             {/* No longer use handleClick when using props */}
             {/* <span onClick={() => handleClick('Contact')}> */}
-            <span>
+            <a data-testid="contact" href="#contact">
               Contact
-            </span>
+            </a>
           </li>
           {categories.map((category) => (
             <li
