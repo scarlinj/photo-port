@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import photo from '../../assets/small/commercial/0.jpg';
+import photo from '../../assets/small/commercial/0.jpg';
 
 const PhotoList = ({ category }) => {
 const [photos] = useState([
@@ -129,7 +129,7 @@ const [photos] = useState([
           // below src grabs small images in category (commercial, food, etc) i (iterates through numbers)
           // module added ".default" after .jpg, but that caused errors.  Removed the default at the end of path
           <img
-            // toe render image, must invoke the "default" property
+            // to render image, must invoke the "default" property
             src={require(`../../assets/small/${category}/${i}.jpg`).default}
             // alt is for accessibility user-assistance devices, such as screen readers
             alt={image.name}

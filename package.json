@@ -40,6 +40,8 @@
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^9.5.0"
+    "@testing-library/react": "^9.5.0",
+    "file-loader": "^6.2.0",
+    "url-loader": "^4.1.1"
   }
 }

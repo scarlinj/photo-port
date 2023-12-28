@@ -1,7 +1,7 @@
 import React from 'react';
 import PhotoList from '../PhotoList';
 // hard-coding the photo shows correct photo in the home page.  Remove this, since Gallery will not render images any more.  Moved to PhotoList.
-// import photo from '../../assets/small/commercial/0.jpg';
+import photo from '../../assets/small/commercial/0.jpg';
 import { capitalizeFirstLetter } from '../../utils/helpers';
 
 // function Gallery(props) {
