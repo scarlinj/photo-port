@@ -3,7 +3,8 @@ import Nav from "./components/Nav";
 import About from './components/About';
 import Gallery from './components/Gallery';
 import Contact from './components/Contact';
-
+import PhotoList from './components/PhotoList';
+import Footer from './components/Footer';
 
 // below function returns JSX that represents HTML in JavaScript
 function App() {
@@ -34,7 +35,11 @@ function App() {
         ></Gallery>
         <About></About>
         <Contact></Contact>
+        <PhotoList></PhotoList>
       </main>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 }

@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
-import photo from '../../assets/small/commercial/0.jpg';
+// import photo from '../../assets/large/portraits';
+import image from '../../assets/small/commercial/0.jpg';
 
 const PhotoList = ({ category }) => {
-const [photos] = useState([
+  const [photos] = useState([
     {
       name: 'Grocery aisle',
       category: 'commercial',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie'
-    },
+    }, 
     {
       name: 'Grocery booth',
       category: 'commercial',
@@ -120,7 +121,7 @@ const [photos] = useState([
   ]);
 
   // below goes through each photo in photos array, matches to the category that user selected
-  const currentPhotos = photos.filter((photo) => photo.category === category);
+  const currentPhotos = photos.filter(photo => photo.category === category);
 
   return (
     <div>
@@ -131,6 +132,8 @@ const [photos] = useState([
           <img
             // to render image, must invoke the "default" property
             src={require(`../../assets/small/${category}/${i}.jpg`).default}
+            // src={require('../../assets/small/commercial/' + image.i + '.png')}
+            // src={photo}
             // alt is for accessibility user-assistance devices, such as screen readers
             alt={image.name}
             className="img-thumbnail mx-1"

@@ -22,13 +22,13 @@ function Gallery({ currentCategory }) {
       <p>{description}</p>
       {/* pass down the currentCategory.name as a prop into the Photolist component from Gallery */}
       <PhotoList category={currentCategory.name} />
-      {/* <div>
+      <div>
         <img
           src={photo}
           alt='Commercial Example'
           className='img-thumbnail mx-1'
           />
-      </div> */}
+      </div>
       {/* <PhotoList category={currentCategory.name} description={currentCategory.description}/> */}
     </section>
   );
