@@ -1,7 +1,7 @@
 import React from 'react';
 import PhotoList from '../PhotoList';
 // hard-coding the photo shows correct photo in the home page.  Remove this, since Gallery will not render images any more.  Moved to PhotoList.
-import photo from '../../assets/small/commercial/0.jpg';
+// import photo from '../../assets/small/commercial/0.jpg';
 import { capitalizeFirstLetter } from '../../utils/helpers';
 
 // function Gallery(props) {
@@ -23,11 +23,12 @@ function Gallery({ currentCategory }) {
       {/* pass down the currentCategory.name as a prop into the Photolist component from Gallery */}
       <PhotoList category={currentCategory.name} />
       <div>
-        <img
+        {/* <img
+        // static image shows.  Look for how to display dynamic gallery of photos
           src={photo}
           alt='Commercial Example'
           className='img-thumbnail mx-1'
-          />
+          /> */}
       </div>
       {/* <PhotoList category={currentCategory.name} description={currentCategory.description}/> */}
     </section>

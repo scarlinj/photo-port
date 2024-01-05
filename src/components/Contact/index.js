@@ -1,11 +1,10 @@
-import React from 'react'
-import coverImage from "../../assets/cover/cover-image.jpg";
+import React from 'react';
 
 function Contact() {
 
   return (
     <section className="my-5" >
-      <h1 id="about">Contact Me</h1>
+      <h1 id="contact">Contact Me</h1>
       {/* <img src={portrait} className="my-2" style={{ width: "100%" }} alt="cover" /> */}
       <div className="my-2">
         <p>
