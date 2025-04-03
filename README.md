@@ -17,7 +17,7 @@ Click the links at the top to see pages about me, my photography portfolio and h
 
 ## About / Synopsis
 
-Click the links at the top to see pages about me, my portfolio and how to contact me.  You can see a gallery of photography and how to contact me.  Feel free to contact me through the form provided.
+Click the links at the top to see pages about me, my portfolio and how to contact me.  You can see a gallery of photography and how to contact me.  Feel free to contact me through the form provided.  The old Heroku site no longer works after cancelling the subscription.  I will find a new host for my websites and update pages.
 
 ## Features
 
